@@ -9,41 +9,43 @@ public class Solution_Day_45 {
   }
 
 class Solution {
-    public ListNode getMid(ListNode head){
+    public ListNode getMid(ListNode head) {
         ListNode slow = head;
         ListNode fast = head.next;
-        while(fast!=null && fast.next!=null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
 
         return slow;
     }
-    public ListNode merge(ListNode left, ListNode right){
+
+    public ListNode merge(ListNode left, ListNode right) {
         ListNode dummy = new ListNode();
         ListNode tail = dummy;
-        while(left != null && right!=null){
-            if(left.val < right.val){
+        while (left != null && right != null) {
+            if (left.val < right.val) {
                 tail.next = left;
                 left = left.next;
-            }else{
+            } else {
                 tail.next = right;
                 right = right.next;
             }
             tail = tail.next;
         }
-        if(left == null){
+        if (left == null) {
             tail.next = right;
         }
-        if(right == null){
+        if (right == null) {
             tail.next = left;
         }
 
         return dummy.next;
     }
-    public ListNode mergeSort(ListNode list1){
+
+    public ListNode mergeSort(ListNode list1) {
         ListNode head = list1;
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
         }
 
