@@ -1,6 +1,6 @@
 public class Solution_Day_57 {
 
-    //Definition for singly-linked list.
+    //Definition for singly-linked list..
      public class ListNode {
           int val;
           ListNode next;
